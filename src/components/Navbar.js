@@ -5,14 +5,10 @@ const Navbar = () => {
     <div className="navbar-container">
       <div className="navbar-wraper">
         <div>
-          <a className="a-tag-titel" href="">
-            Where in the World?
-          </a>
+          <div className="a-tag-titel">Where in the World?</div>
         </div>
         <div>
-          <a className="a-tag-mood" href="">
-            Dark Mood
-          </a>
+          <div className="a-tag-mood">Dark Mood</div>
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import CountryCard from "./CountryCard";
+import CountriesGrid from "./CountriesGrid";
 const Countries = () => {
   const [countries, setCountries] = useState([]);
 
@@ -9,7 +9,12 @@ const Countries = () => {
       .then((data) => setCountries(data));
   }, []);
 
-  return <CountryCard countries={countries} />;
+  return (
+    <>
+      <select></select>
+      <CountriesGrid countries={countries} />
+    </>
+  );
 };
 
 export default Countries;
