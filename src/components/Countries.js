@@ -2,8 +2,7 @@ import React, { useState, useEffect, Fragment } from "react";
 import CountriesGrid from "./CountriesGrid";
 const Countries = () => {
   const [allCountries, setAllCountries] = useState([]);
-  const [selectedRegion, setSelectedRegion] = useState("Africa");
-  const [counter, setCounter] = useState(0);
+  const [selectedRegion, setSelectedRegion] = useState("");
 
   const fetchAndRememberCountries = () => {
     fetch(`https://restcountries.eu/rest/v2/all`)
@@ -17,14 +16,11 @@ const Countries = () => {
   };
   return (
     <Fragment>
-      <button onClick={() => setCounter(counter + 1)}>Add the count</button>
-      <p>Current value {counter}</p>
-
       <select
         value={selectedRegion}
         onChange={(e) => setSelectedRegion(e.target.value)}
       >
-        <option>Filter by Region</option>
+        <option value="">Filter by Region</option>
         <option>Africa</option>
         <option>Americas</option>
         <option>Asia</option>
@@ -32,7 +28,11 @@ const Countries = () => {
         <option>Oceania</option>
       </select>
       <CountriesGrid
-        countries={filterCountriesByRegion(allCountries, selectedRegion)}
+        countries={
+          selectedRegion === ""
+            ? allCountries
+            : filterCountriesByRegion(allCountries, selectedRegion)
+        }
       />
     </Fragment>
   );
