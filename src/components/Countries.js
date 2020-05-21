@@ -1,3 +1,4 @@
+// ToDo. What is the best name for this component? sugested: CountryControlAndGrid
 import React, { useState, useEffect, Fragment } from "react";
 import CountriesGrid from "./CountriesGrid";
 import RegionSelect from "./RegionSelect";
@@ -17,19 +18,18 @@ const Countries = () => {
     return countries.filter((country) => country.region === region);
   };
 
+  const countriesToShow =
+    selectedRegion === ""
+      ? allCountries
+      : filterCountriesByRegion(allCountries, selectedRegion);
+
   return (
     <Fragment>
       <RegionSelect
         selectedRegion={selectedRegion}
         setSelectedRegion={setSelectedRegion}
       />
-      <CountriesGrid
-        countries={
-          selectedRegion === ""
-            ? allCountries
-            : filterCountriesByRegion(allCountries, selectedRegion)
-        }
-      />
+      <CountriesGrid countries={countriesToShow} />
     </Fragment>
   );
 };
