@@ -1,5 +1,7 @@
 import React, { useState, useEffect, Fragment } from "react";
 import CountriesGrid from "./CountriesGrid";
+import RegionSelect from "./RegionSelect";
+
 const Countries = () => {
   const [allCountries, setAllCountries] = useState([]);
   const [selectedRegion, setSelectedRegion] = useState("");
@@ -14,19 +16,13 @@ const Countries = () => {
   const filterCountriesByRegion = (countries, region) => {
     return countries.filter((country) => country.region === region);
   };
+
   return (
     <Fragment>
-      <select
-        value={selectedRegion}
-        onChange={(e) => setSelectedRegion(e.target.value)}
-      >
-        <option value="">Filter by Region</option>
-        <option>Africa</option>
-        <option>Americas</option>
-        <option>Asia</option>
-        <option>Europe</option>
-        <option>Oceania</option>
-      </select>
+      <RegionSelect
+        selectedRegion={selectedRegion}
+        setSelectedRegion={setSelectedRegion}
+      />
       <CountriesGrid
         countries={
           selectedRegion === ""
