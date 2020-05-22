@@ -3,6 +3,7 @@ import React from "react";
 const RegionSelect = ({ selectedRegion, setSelectedRegion }) => {
   return (
     <select
+      className="select-region"
       value={selectedRegion}
       onChange={(e) => setSelectedRegion(e.target.value)}
     >

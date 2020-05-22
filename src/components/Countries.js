@@ -2,6 +2,7 @@
 import React, { useState, useEffect, Fragment } from "react";
 import CountriesGrid from "./CountriesGrid";
 import RegionSelect from "./RegionSelect";
+import SearchInputByCountryName from "./SearchInputByCountryName";
 
 const Countries = () => {
   const [allCountries, setAllCountries] = useState([]);
@@ -36,14 +37,13 @@ const Countries = () => {
 
   return (
     <Fragment>
-      <input
-        placeholder="Search for a country"
-        onChange={(e) => setGivenInput(e.target.value)}
-      ></input>
-      <RegionSelect
-        selectedRegion={selectedRegion}
-        setSelectedRegion={setSelectedRegion}
-      />
+      <div className="container search-select-container">
+        <SearchInputByCountryName setGivenInput={setGivenInput} />
+        <RegionSelect
+          selectedRegion={selectedRegion}
+          setSelectedRegion={setSelectedRegion}
+        />
+      </div>
       {givenInput ? (
         <CountriesGrid countries={filteredCountriesToShow} />
       ) : (
