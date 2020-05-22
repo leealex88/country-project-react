@@ -6,6 +6,7 @@ import RegionSelect from "./RegionSelect";
 const Countries = () => {
   const [allCountries, setAllCountries] = useState([]);
   const [selectedRegion, setSelectedRegion] = useState("");
+  const [givenInput, setGivenInput] = useState("");
 
   const fetchAndRememberCountries = () => {
     fetch(`https://restcountries.eu/rest/v2/all`)
@@ -18,18 +19,36 @@ const Countries = () => {
     return countries.filter((country) => country.region === region);
   };
 
+  const filterCountriesByTheInput = (countries, input) => {
+    return countries.filter((country) =>
+      country.name.toLowerCase().includes(input.toLowerCase())
+    );
+  };
+
   const countriesToShow =
     selectedRegion === ""
       ? allCountries
       : filterCountriesByRegion(allCountries, selectedRegion);
 
+  const filteredCountriesToShow = givenInput
+    ? filterCountriesByTheInput(allCountries, givenInput)
+    : null;
+
   return (
     <Fragment>
+      <input
+        placeholder="Search for a country"
+        onChange={(e) => setGivenInput(e.target.value)}
+      ></input>
       <RegionSelect
         selectedRegion={selectedRegion}
         setSelectedRegion={setSelectedRegion}
       />
-      <CountriesGrid countries={countriesToShow} />
+      {givenInput ? (
+        <CountriesGrid countries={filteredCountriesToShow} />
+      ) : (
+        <CountriesGrid countries={countriesToShow} />
+      )}
     </Fragment>
   );
 };
