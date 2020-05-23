@@ -3,7 +3,7 @@ import "./App.css";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Countries from "./components/Countries";
 import Navbar from "./components/Navbar";
-import Country from "./components/Country";
+import CountryBigCard from "./components/CountryBigCard";
 function App() {
   return (
     <BrowserRouter>
@@ -11,7 +11,7 @@ function App() {
         <Navbar />
         <Switch>
           <Route path="/country">
-            <Country />
+            <CountryBigCard />
           </Route>
           <Route path="/">
             <Countries />
