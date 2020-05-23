@@ -81,6 +81,7 @@ img {
   margin-bottom: 55px;
   box-shadow: 70px white;
   border-radius: 5px;
+  text-decoration: none;
   /* width: 220px; */
 }
 
@@ -97,4 +98,9 @@ img {
 .country-name {
   margin-top: 10px !important;
   margin-bottom: 10px !important;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--text-color);
 }
