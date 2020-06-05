@@ -86,14 +86,13 @@ img {
   /* width: 220px; */
 }
 
-.card-flag-container {
-}
+.card-flag-container {}
 
 .card-info-container {
   padding: 15px;
 }
 
-.card-info-container > p {
+.card-info-container>p {
   margin: 0;
 }
 
@@ -105,4 +104,9 @@ img {
 .link {
   text-decoration: none;
   color: var(--text-color);
+}
+
+.big-card-flag-image {
+  height: 40%;
+  width: 40%;
 }
