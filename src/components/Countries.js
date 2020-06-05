@@ -8,6 +8,12 @@ const Countries = () => {
   const [allCountries, setAllCountries] = useState([]);
   const [selectedRegion, setSelectedRegion] = useState("");
   const [givenInput, setGivenInput] = useState("");
+  // const [selectedCountry, setSelectedCountry] = useState([]);
+
+  // const selectedCountryByClick = (countries, countryName) => {
+  //   const selected = countries.find((country) => country.name === countryName);
+  //   setSelectedCountry(selected)
+  // };
 
   const fetchAndRememberCountries = () => {
     fetch(`https://restcountries.eu/rest/v2/all`)
@@ -44,11 +50,9 @@ const Countries = () => {
           setSelectedRegion={setSelectedRegion}
         />
       </div>
-      {givenInput ? (
-        <CountriesGrid countries={filteredCountriesToShow} />
-      ) : (
-        <CountriesGrid countries={countriesToShow} />
-      )}
+      <CountriesGrid
+        countries={givenInput ? filteredCountriesToShow : countriesToShow}
+      />
     </Fragment>
   );
 };

@@ -1,4 +1,5 @@
 import React from "react";
+
 import "../grid.css";
 import CountryCard from "./CountryCard";
 const CountriesGrid = ({ countries }) => {

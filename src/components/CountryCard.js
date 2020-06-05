@@ -1,9 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
-const CountryCard = ({ country }) => {
+import { Link, useHistory } from "react-router-dom";
+const CountryCard = ({ country, currentCountry }) => {
   return (
     <div className="xl-col-3 lg-col-3 md-col-3 sm-col-12 col-12">
-      <Link className="link" to={`/country/${country.name}`}>
+      <Link
+        className="link"
+        to={{
+          pathname: `/country/${country.alpha3Code}`,
+          state: { country: country },
+        }}
+      >
         <div className="each-card">
           <div className="card-flag-container">
             <img src={country.flag} alt="" />
