@@ -3,11 +3,12 @@ import React, { useState, useEffect, Fragment } from "react";
 import CountriesGrid from "./CountriesGrid";
 import RegionSelect from "./RegionSelect";
 import SearchInputByCountryName from "./SearchInputByCountryName";
-
+// import useLocalState from "../hooks/useLocalState";
 const Countries = () => {
   const [allCountries, setAllCountries] = useState([]);
   const [selectedRegion, setSelectedRegion] = useState("");
   const [givenInput, setGivenInput] = useState("");
+
   // const [selectedCountry, setSelectedCountry] = useState([]);
 
   // const selectedCountryByClick = (countries, countryName) => {

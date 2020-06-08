@@ -46,9 +46,13 @@ const CountryBigCard = (props) => {
 
           <div>
             <b>Border Countries:</b>{" "}
-            {country.borders.map((country, index) => (
-              <button key={index}>{country}</button>
-            ))}
+            {country.borders.map((country, index) =>
+              country.length === 0 ? (
+                <div>No borders</div>
+              ) : (
+                <button key={index}>{country}</button>
+              )
+            )}
           </div>
         </div>
       </div>
