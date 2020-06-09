@@ -4,11 +4,11 @@ import CountriesGrid from "./CountriesGrid";
 import RegionSelect from "./RegionSelect";
 import SearchInputByCountryName from "./SearchInputByCountryName";
 // import useLocalState from "../hooks/useLocalState";
-const Countries = () => {
+const Countries = ({ isDark }) => {
   const [allCountries, setAllCountries] = useState([]);
   const [selectedRegion, setSelectedRegion] = useState("");
   const [givenInput, setGivenInput] = useState("");
-
+  console.log("isDark", isDark);
   // const [selectedCountry, setSelectedCountry] = useState([]);
 
   // const selectedCountryByClick = (countries, countryName) => {
@@ -53,6 +53,7 @@ const Countries = () => {
       </div>
       <CountriesGrid
         countries={givenInput ? filteredCountriesToShow : countriesToShow}
+        isDark={isDark}
       />
     </Fragment>
   );
