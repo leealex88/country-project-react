@@ -1,12 +1,12 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
-const CountryCard = ({ country, currentCountry, isDark }) => {
+const CountryCard = ({ country, isDark }) => {
   return (
     <div className="xl-col-3 lg-col-3 md-col-3 sm-col-12 col-12">
       <Link
         className="link"
         to={{
-          pathname: `/country/${country.alpha3Code}`,
+          pathname: `/countries/${country.alpha3Code}`,
           state: { country: country },
         }}
       >

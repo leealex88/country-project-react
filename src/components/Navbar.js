@@ -42,7 +42,7 @@ const Navbar = ({ darkMode }) => {
       <div className="navbar-wraper">
         <div>
           <div className="a-tag-titel">
-            <Link className="link" to={{ pathname: "/countries" }}>
+            <Link className="link" to={{ pathname: "/" }}>
               Where in the World...
             </Link>
           </div>

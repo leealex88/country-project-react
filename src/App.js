@@ -19,7 +19,11 @@ function App() {
           }}
         />
         <Switch>
-          <Route exact path="/country/:alpha3Code" component={CountryBigCard} />
+          <Route
+            exact
+            path="/countries/:alpha3Code"
+            component={CountryBigCard}
+          />
           <Route
             exact
             path="/countries"

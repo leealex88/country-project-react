@@ -5,10 +5,10 @@ function HomePage() {
   return (
     <div className="home-page">
       <div className="button-container">
-        <div className="a-tag-titel">
+        <div className="go-to-country-button">
           <Link className="link" to={{ pathname: "/countries" }}>
             <button className="button">
-              ...would you like to be?
+              ...would you like to go?
               <p className="small-p">click and check!</p>
             </button>
           </Link>
